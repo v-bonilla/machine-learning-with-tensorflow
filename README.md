@@ -17,7 +17,7 @@ The XOR function is an operation over two binary values, *x1* and *x2*. The func
 
 So XOR is a classification problem. Apparently it's a very simple problem, however, Minsky and Papert (1969) demostrated the difficulty to solve the problem by the architectures of the neural networks at that time. It is because, as shown in the image, the Perceptron can only classify linearly separable data and the XOR problem is not linear.
 
- ![Visual representation of non-linear XOR function](/readmeImages/XOR-SP.png)
+ ![Visual representation of non-linear XOR function](/images/XOR-SP.png)
 
  To solve this question a non-linear model is needed, therefore, the solution is a Multi-Layer Perceptron.
 
@@ -28,6 +28,84 @@ So XOR is a classification problem. Apparently it's a very simple problem, howev
 3. Train the model using the training data.
 4. Classify new examples.
 
+#### How to run
+
+Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow. Then run the file `xorDNN.py` in the `xor` directory.
+
+Complete process for Linux/Mac:
+
+1. `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
+2. `cd machine-learning-with-tensorflow_bachelor-thesis/xor`
+3. `python2.7 xorDNN.py`
+
 ## Implementation of a Kaggle problem
 
-Section working in progess.
+Kaggle is a web platform focused on Data Science in where, among other things, competitions and datasets are offered to the community. I decided to deal with the [problem proposed by the competition "Ghouls, Goblins, and Ghosts... Boo!"](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo). This competition consists in classify three types of enchanted creatures described by the features of the dataset.
+
+The description of the dataset and files provided can be found [here](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo/data).
+
+Given that it's a competition, to evaluate the model is needed to submit (to the Kaggle server) a file with the results given by the model and it will return the score or precision of the model.
+
+To implement the neural network it can be used the high-level API of TensorFlow (`tf.estimator`) as for the XOR implementation. The process consists of four steps implemented in the Python file `ghouls-goblins-and-ghosts-boo/ggg_dnn.py`:
+
+1. Load the CSV files and preprocess the training set with pandas.
+2. Build the classifying Neural Network.
+3. Train the model using the training data.
+4. Classify new examples.
+
+### Results
+
+The difference between the architectures  used is the number of hidden layers and neurons. Every model had the same optimizer, activation function and number of train iterations. The results obtained are showed in the next table:
+
+| *Num of hidden layers* | *Num of neurons in each layer* | *Score* (Max score: 1)
+:-----: | :------: | :------: | :------:
+Model 1 | 1 | [5] | 0.72400
+Model 2 | 1 | [10] | 0.71833
+Model 3 | 2 | [5,5] | 0.71833
+Model 4 | 1 | [100] | 0.70132
+Model 5 | 4 | [128,256,512,1024] | 0.68620
+Model 6 | 7 | [128,256,512,1024,512,256,128] | 0.67296
+Model 7 | 3 | [512,512,512] | 0.66918
+Model 8 | 3 | [64,128,256] | 0.66351
+Model 9 | 3 | [100,100,100] | 0.66162
+
+The highest score is 0.724 by the model with five neurons in one layer.
+
+However, in the leaderboard the average of the score by the community models is around 0.76. On the other hand, starting TensorBoard with the path of the model 1 directory as argument, it can be seen the chart describing the average error during the training.
+
+![Average error during the training of the model 1](/images/GGG-average-error1.png)
+
+In the chart, the average error is above 1 and the learning algorithm doesn't converge. Moreover, the highest score obtained is below the average of the community scores, that which motivate the next experiment.
+
+### Experiment. Comparing optimizers and activation functions
+
+Given that the highest score obtained is below the average, it is proposed the evaluation and comparison of models built with different optimizers and activation functions.
+
+The experiment variables:
+
+- The two first models with better results has been selected: model 1 and model 2, with five and ten neurons respectively in the hidden layer.
+- Optimizers: Adadelta, Adagrad, Adam, Ftrl, GradientDescent, ProximalAdagrad, ProximalGradientDescent, RMSProp.
+- Activation functions: ReLU, ReLU6, CReLU, ELU, SeLU, Softplus, Softsign, Sigmoid, Tanh.
+- Every model has been trained during 10,000 iterations.
+
+### Experiment. Results and conclusions
+
+The comparison has 144 elements. The next table shows the top ten results:
+
+| *Num of neurons in the hidden layer* | *Optimizer* | *Activation function* | *Score* (Max score: 1)
+:-----: | :------: | :------: | :------: | :------:
+Model 1 | [5] | GradientDescent | SeLU | 0.73913
+Model 2 | [5] | ProximalGradientDescent | Softplus | 0.73913
+Model 3 | [5] | RMSProp | CReLU | 0.73534
+Model 4 | [5] | GradientDescent | ELU | 0.73345
+Model 5 | [5] | GradientDescent | ReLU | 0.73345
+Model 6 | [5] | RMSProp | Softsign | 0.73345
+Model 7 | [10] | Adam | Softplus | 0.73345
+Model 8 | [10] | Adam | Softsign | 0.73345
+Model 9 | [5] | Adagrad | CReLU | 0.73156
+Model 10 | [5] | Adagrad | ELU | 0.73156
+
+![Distribution of the scores](/images/experiment-results.png)
+
+---
+Working in progress...

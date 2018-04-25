@@ -67,7 +67,7 @@ def main(hl, steps, optimizer, activation_fn):
                has_soul,
                tf.feature_column.indicator_column(color)]
 
-    # Build 3 layer DNN with 64, 128, 256 units respectively.
+    # Build the DNN with the specified arguments.
     classifier = tf.estimator.DNNClassifier(
         feature_columns=columns,
         hidden_units=[hl for hl in HIDDEN_LAYERS],
@@ -84,16 +84,6 @@ def main(hl, steps, optimizer, activation_fn):
 
     # Train model.
     classifier.train(input_fn=train_input_fn, steps=STEPS)
-
-    # Define the test inputs
-    # test_input_fn = get_input_fn(prediction_set, num_epochs=1, shuffle=False)
-
-    # Evaluate for one step (one pass through the test data).
-    # results = classifier.evaluate(input_fn=test_input_fn)
-
-    # Print the stats for the evaluation.
-    # for key in sorted(results):
-    #     print("%s: %s" % (key, results[key]))
 
     # Predict the samples in test.csv
     test_input_fn = get_input_fn(test_set, y_none=True, num_epochs=1, shuffle=False)
