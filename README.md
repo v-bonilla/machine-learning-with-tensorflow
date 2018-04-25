@@ -57,7 +57,7 @@ To implement the neural network it can be used the high-level API of TensorFlow 
 
 The difference between the architectures  used is the number of hidden layers and neurons. Every model had the same optimizer, activation function and number of train iterations. The results obtained are showed in the next table:
 
-| *Num of hidden layers* | *Num of neurons in each layer* | *Score* (Max score: 1)
+Results | *Num of hidden layers* | *Num of neurons in each layer* | *Score* (Max score: 1)
 :-----: | :------: | :------: | :------:
 Model 1 | 1 | [5] | 0.72400
 Model 2 | 1 | [10] | 0.71833
@@ -92,7 +92,7 @@ The experiment variables:
 
 The comparison has 144 elements. The next table shows the top ten results:
 
-| *Num of neurons in the hidden layer* | *Optimizer* | *Activation function* | *Score* (Max score: 1)
+Top ten architectures | *Num of neurons in the hidden layer* | *Optimizer* | *Activation function* | *Score* (Max score: 1)
 :-----: | :------: | :------: | :------: | :------:
 Model 1 | [5] | GradientDescent | SeLU | 0.73913
 Model 2 | [5] | ProximalGradientDescent | Softplus | 0.73913
