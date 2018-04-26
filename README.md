@@ -4,6 +4,17 @@ This repository contains the implementation for the Bachelor Thesis published [h
 
 The content of the repository is divided in two parts: firstly, a solution to the classic problem of the XOR function, and afterwards, the implementation proposed to solve a [problem from Kaggle](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo) and an experiment comparing the optimizers and activation functions available in the high-level API of TensorFlow.
 
+### Table of content
+
+1. [Implementation of a classic problem: XOR function](#implementation-of-a-classic-problem-xor-function)
+2.  [XOR function - How to run](#how-to-run)
+3. [Implementation of a Kaggle problem](#implementation-of-a-kaggle-problem)
+4. [Implementation of a Kaggle problem - Results](#results)
+5. [Experiment with the Kaggle problem - Comparing optimizers and activation functions](#experiment-comparing-optimizers-and-activation-functions)
+6. [Experiment with the Kaggle problem - Results and conclusions](#experiment-results-and-conclusions)
+7. [Kaggle problem - How to run - Predefined neural network](#how-to-run---predefined-neural-network)
+8. [Kaggle problem - How to run - Experiment](#how-to-run---experiment)
+
 ## Implementation of a classic problem: XOR function
 
 The XOR function is an operation over two binary values, *x1* and *x2*. The function returns 1 if one of the binary values is 1. In any other case, when both values are 0 or 1, it returns 0.
@@ -28,14 +39,14 @@ So XOR is a classification problem. Apparently it's a very simple problem, howev
 3. Train the model using the training data.
 4. Classify new examples.
 
-#### How to run
+### How to run
 
-**Before proceed:**
+#### Before proceed:
 
 - Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 
-**Steps:**
+#### Steps:
 
 1. `cd machine-learning-with-tensorflow_bachelor-thesis/xor`
 2. `python2.7 xorDNN.py`
@@ -117,11 +128,11 @@ The specifications of the two best architectures are:
 Once again, TensorBoard shows the charts of the average error in these models:
 
 ![Model 1. GradientDescent and SeLU.](/images/error-GradientDescent-SeLU.png)
-Model 1. GradientDescent and SeLU.
+*Model 1. GradientDescent and SeLU.*
 
 
 ![Model 2. ProximalGradientDescent and Softplus.](/images/error-ProximalGradientDescent-Softplus.png)
-Model 2. ProximalGradientDescent and Softplus.
+*Model 2. ProximalGradientDescent and Softplus.*
 
 The score has increased slightly, that is an increment of 0.02%, and it's still below the average.
 
@@ -131,9 +142,9 @@ In conclusion, the fact of changing the optimizer and the activation function ha
 
 To obtain a better result it's needed a more specific model developed with the low-level API of TensorFlow.
 
-#### How to run - Predefined neural network
+### How to run - Predefined neural network
 
-**Before proceed:**
+#### Before proceed:
 
 - Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
@@ -141,21 +152,21 @@ To obtain a better result it's needed a more specific model developed with the l
 
 **To see help:** `python2.7 ggg_dnn.py -h`
 
-**Steps:**
+#### Steps:
 
 1. `cd machine-learning-with-tensorflow_bachelor-thesis/ghouls-goblins-and-ghosts-boo`
 2. Execute with the number of neurons in each hidden layer. For example, a dnn with two hidden layers and 5 neurons in each: `python2.7 ggg_dnn.py -hl 5,5`
 3. The submission file named `submission_dnn_HIDDEN_LAYERS_Adagrad_tf.nn.relu_5000.csv` will be created in `ghouls-goblins-and-ghosts-boo/`
 
-#### How to run - Experiment
+### How to run - Experiment
 
-**Before proceed:**
+#### Before proceed:
 
 - Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 - Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files you have downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
 
-**Steps:**
+#### Steps:
 
 1. `cd machine-learning-with-tensorflow_bachelor-thesis/ghouls-goblins-and-ghosts-boo/experiment`
 2. `python2.7 ggg-comparison.py`
