@@ -115,7 +115,7 @@ def main(hl, steps, optimizer, activation_fn):
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description='Create a DNN')
+    parser = argparse.ArgumentParser(description='Create a DNN with the arguments, train it and predict the cases in the test set. Examples: \"python2.7 ggg_dnn.py -hl 5,10\"; \"python2.7 ggg_dnn.py -hl 64,128 -steps 10000 -opt GradientDescent -act selu\"...')
     parser.add_argument('-hl', '--hidden-layers', required=True,
                         help='the number of units in each hidden layer. Ex: 10,10,10')
     parser.add_argument('-steps', default=5000, type=int,

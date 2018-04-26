@@ -30,13 +30,15 @@ So XOR is a classification problem. Apparently it's a very simple problem, howev
 
 #### How to run
 
-Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow. Then run the file `xorDNN.py` in the `xor` directory.
+**Before proceed:**
 
-Complete process for Linux/Mac:
+- Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
+- If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 
-1. `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
-2. `cd machine-learning-with-tensorflow_bachelor-thesis/xor`
-3. `python2.7 xorDNN.py`
+**Steps:**
+
+1. `cd machine-learning-with-tensorflow_bachelor-thesis/xor`
+2. `python2.7 xorDNN.py`
 
 ## Implementation of a Kaggle problem
 
@@ -57,7 +59,7 @@ To implement the neural network it can be used the high-level API of TensorFlow 
 
 The difference between the architectures  used is the number of hidden layers and neurons. Every model had the same optimizer, activation function and number of train iterations. The results obtained are showed in the next table:
 
-Results | *Num of hidden layers* | *Num of neurons in each layer* | *Score* (Max score: 1)
+Models | Num of hidden layers | Num of neurons in each layer | Score (Max score: 1)
 :-----: | :------: | :------: | :------:
 Model 1 | 1 | [5] | 0.72400
 Model 2 | 1 | [10] | 0.71833
@@ -92,7 +94,7 @@ The experiment variables:
 
 The comparison has 144 elements. The next table shows the top ten results:
 
-Top ten architectures | *Num of neurons in the hidden layer* | *Optimizer* | *Activation function* | *Score* (Max score: 1)
+Top ten models | Num of neurons in the hidden layer | Optimizer | Activation function | Score (Max score: 1)
 :-----: | :------: | :------: | :------: | :------:
 Model 1 | [5] | GradientDescent | SeLU | 0.73913
 Model 2 | [5] | ProximalGradientDescent | Softplus | 0.73913
@@ -107,5 +109,54 @@ Model 10 | [5] | Adagrad | ELU | 0.73156
 
 ![Distribution of the scores](/images/experiment-results.png)
 
----
-Working in progress...
+The specifications of the two best architectures are:
+
+1. 5 neurons in the hidden layer, GradientDescent as optimizer and SeLU as activation function.
+2. 5 neurons in the hidden layer, ProximalGradientDescent as optimizer and Softplus as activation function.
+
+Once again, TensorBoard shows the charts of the average error in these models:
+
+![Model 1. GradientDescent and SeLU.](/images/error-GradientDescent-SeLU.png)
+Model 1. GradientDescent and SeLU.
+
+
+![Model 2. ProximalGradientDescent and Softplus.](/images/error-ProximalGradientDescent-Softplus.png)
+Model 2. ProximalGradientDescent and Softplus.
+
+The score has increased slightly, that is an increment of 0.02%, and it's still below the average.
+
+On the other hand, in the charts showing the average error it can be seen that the model converges between 0.4 and 0.6 in 1,000 iterations approximately.
+
+In conclusion, the fact of changing the optimizer and the activation function has caused the increment in the learning speed and the reduction in the error, but it hasn't been enough because the increment in the score is insignificant.
+
+To obtain a better result it's needed a more specific model developed with the low-level API of TensorFlow.
+
+#### How to run - Predefined neural network
+
+**Before proceed:**
+
+- Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
+- If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
+- Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files you have downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
+
+**To see help:** `python2.7 ggg_dnn.py -h`
+
+**Steps:**
+
+1. `cd machine-learning-with-tensorflow_bachelor-thesis/ghouls-goblins-and-ghosts-boo`
+2. Execute with the number of neurons in each hidden layer. For example, a dnn with two hidden layers and 5 neurons in each: `python2.7 ggg_dnn.py -hl 5,5`
+3. The submission file named `submission_dnn_HIDDEN_LAYERS_Adagrad_tf.nn.relu_5000.csv` will be created in `ghouls-goblins-and-ghosts-boo/`
+
+#### How to run - Experiment
+
+**Before proceed:**
+
+- Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
+- If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
+- Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files you have downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
+
+**Steps:**
+
+1. `cd machine-learning-with-tensorflow_bachelor-thesis/ghouls-goblins-and-ghosts-boo/experiment`
+2. `python2.7 ggg-comparison.py`
+3. The submission files will be created in `ghouls-goblins-and-ghosts-boo/experiment/`
