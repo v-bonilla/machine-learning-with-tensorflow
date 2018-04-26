@@ -10,8 +10,8 @@ The content of the repository is divided in two parts: firstly, a solution to th
 2.  [XOR function - How to run](#how-to-run)
 3. [Implementation of a Kaggle problem](#implementation-of-a-kaggle-problem)
 4. [Implementation of a Kaggle problem - Results](#results)
-5. [Experiment with the Kaggle problem - Comparing optimizers and activation functions](#experiment-comparing-optimizers-and-activation-functions)
-6. [Experiment with the Kaggle problem - Results and conclusions](#experiment-results-and-conclusions)
+5. [Experimenting with the Kaggle problem - Comparing optimizers and activation functions](#experiment-comparing-optimizers-and-activation-functions)
+6. [Experimenting with the Kaggle problem - Results and conclusions](#experiment-results-and-conclusions)
 7. [Kaggle problem - How to run - Predefined neural network](#how-to-run---predefined-neural-network)
 8. [Kaggle problem - How to run - Experiment](#how-to-run---experiment)
 
