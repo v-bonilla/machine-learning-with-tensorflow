@@ -148,7 +148,7 @@ To obtain a better result it's needed a more specific model developed with the l
 
 - Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
-- Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files you have downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
+- Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
 
 **To see help:** `python2.7 ggg_dnn.py -h`
 
@@ -164,7 +164,7 @@ To obtain a better result it's needed a more specific model developed with the l
 
 - Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
-- Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files you have downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
+- Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
 
 #### Steps:
 
