@@ -46,7 +46,7 @@ So XOR is a classification problem. Apparently it's a very simple problem, howev
 - Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 
-#### Steps:
+#### Steps (in Linux):
 
 1. `cd machine-learning-with-tensorflow_bachelor-thesis/xor`
 2. `python2.7 xorDNN.py`
@@ -152,7 +152,7 @@ To obtain a better result it's needed a more specific model developed with the l
 
 **To see help:** `python2.7 ggg_dnn.py -h`
 
-#### Steps:
+#### Steps (in Linux):
 
 1. `cd machine-learning-with-tensorflow_bachelor-thesis/ghouls-goblins-and-ghosts-boo`
 2. Execute with the number of neurons in each hidden layer. For example, a dnn with two hidden layers and 5 neurons in each: `python2.7 ggg_dnn.py -hl 5,5`
@@ -166,7 +166,7 @@ To obtain a better result it's needed a more specific model developed with the l
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 - Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
 
-#### Steps:
+#### Steps (in Linux):
 
 1. `cd machine-learning-with-tensorflow_bachelor-thesis/ghouls-goblins-and-ghosts-boo/experiment`
 2. `python2.7 ggg-comparison.py`
