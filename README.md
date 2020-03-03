@@ -43,7 +43,7 @@ So XOR is a classification problem. Apparently it's a very simple problem, howev
 
 #### Before proceed:
 
-- Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
+- Make sure you have installed Python 2.7 and TensorFlow 1.0.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 
 #### Steps (in Linux):
@@ -146,7 +146,7 @@ To obtain a better result it's needed a more specific model developed with the l
 
 #### Before proceed:
 
-- Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
+- Make sure you have installed Python 2.7 and TensorFlow 1.0.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 - Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
 
@@ -162,7 +162,7 @@ To obtain a better result it's needed a more specific model developed with the l
 
 #### Before proceed:
 
-- Make sure you have installed Python (I recommend to run with Python 2.7) and TensorFlow.
+- Make sure you have installed Python 2.7 and TensorFlow 1.0.
 - If you haven't cloned the repository, do it with `git clone git@github.com:v-bonilla/machine-learning-with-tensorflow_bachelor-thesis.git`
 - Change the variables "`GGG_TRAINING`" and "`GGG_TEST`" in `ghouls-goblins-and-ghosts-boo/ggg_dnn.py` with the location of the files downloaded from [the Kaggle competition](https://www.kaggle.com/c/ghouls-goblins-and-ghosts-boo).
 
